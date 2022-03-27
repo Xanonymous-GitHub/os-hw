@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "fstream": "cpp",
+        "__config": "cpp",
+        "locale": "cpp",
+        "atomic": "cpp",
+        "*.tcc": "cpp",
+        "sstream": "cpp",
+        "cstdlib": "cpp",
+        "cstdio": "cpp",
+        "ostream": "cpp"
+    }
+}

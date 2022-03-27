@@ -9,7 +9,7 @@ using namespace std;
  * @return true: file exists.
  * @return false: file not exists.
  */
-bool isFileExistsAt(const char *&file_path) {
+bool isFileAccesableAt(const char *&file_path) {
     FILE *file_ptr = fopen(file_path, "r");
     const bool isExist = !(file_ptr == nullptr);
     fclose(file_ptr);
@@ -25,33 +25,22 @@ bool isFileExistsAt(const char *&file_path) {
  */
 void copyFileContent(const char *&srcPath, const char *&destPath) {
     // Check if the source file is existed.
-    const bool isSourceFileExists = isFileExistsAt(srcPath);
+    const bool isSourceFileExists = isFileAccesableAt(srcPath);
     if (!isSourceFileExists) {
-        cout << "source file is not exist!" << endl;
+        perror("Source file can't be accessed: ");
         exit(1);
     }
 
     // Check if the destination file is existed.
-    const bool isDestinationFileExists = isFileExistsAt(destPath);
+    const bool isDestinationFileExists = isFileAccesableAt(destPath);
     if (!isDestinationFileExists) {
-        cout << "destination file is not exist!" << endl;
+        perror("Destination file can't be accessed: ");
         exit(1);
     }
 
     // Get pointers for both files.
     FILE *src_ptr = fopen(srcPath, "r");
     FILE *dest_ptr = fopen(destPath, "w");
-
-    // Check if both files can be accessed.
-    if (!src_ptr) {
-        perror("Source file can't be opened: ");
-        exit(1);
-    }
-
-    if (!dest_ptr) {
-        perror("Destination file can't be opened: ");
-        exit(1);
-    }
 
     // Copy the contents of a file character by character to another file.
     int content_buf;

@@ -10,5 +10,6 @@
         "cstdlib": "cpp",
         "cstdio": "cpp",
         "ostream": "cpp"
-    }
+    },
+    "nuxt.isNuxtApp": false
 }

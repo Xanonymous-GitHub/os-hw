@@ -9,7 +9,12 @@
         "sstream": "cpp",
         "cstdlib": "cpp",
         "cstdio": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "__mutex_base": "cpp",
+        "condition_variable": "cpp",
+        "mutex": "cpp",
+        "thread": "cpp",
+        "version": "cpp"
     },
     "nuxt.isNuxtApp": false
 }
